@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen flex bg-background font-sans antialiased",
+          "flex bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
@@ -38,10 +38,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Sidebar />
-          <main className="w-full">
+          <div className="flex flex-col w-full h-screen">
             <Navbar />
-            <div className="p-[20px]">{children}</div>
-          </main>
+            <div className="flex-1 overflow-y-auto">{children}</div>
+          </div>
         </ThemeProvider>
       </body>
     </html>
