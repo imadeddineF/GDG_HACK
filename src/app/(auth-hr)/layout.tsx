@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../styles/globals.css";
+import "../../styles/globals.css";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 const inter = Inter({ subsets: ["latin"] });
 import { ThemeProvider } from "@/components/theme-provider";
+import Sidebar from "@/components/layouts/sidebar";
+import Navbar from "@/components/layouts/navbar";
 
 export const metadata: Metadata = {
   title: "GDG Hack",
@@ -25,7 +27,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen flex bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
@@ -35,7 +37,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Sidebar />
+          <main className="w-full">
+            <Navbar />
+            <div className="p-[20px]">{children}</div>
+          </main>
         </ThemeProvider>
       </body>
     </html>
