@@ -37,7 +37,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
-const Home = () => {
+const Agenda = () => {
   return (
     <div className=" bg-black/5 p-[20px] h-screen">
       <div className="rounded-2xl overflow-hidden w-full h-[150px] relative">
@@ -192,4 +192,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Agenda;

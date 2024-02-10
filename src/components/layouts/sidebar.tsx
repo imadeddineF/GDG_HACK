@@ -27,7 +27,7 @@ const SidebarContext = createContext({ expanded: false });
 
 export default function Sidebar() {
   const [expanded, setExpanded] = useState(true);
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState("/");
 
   const handleLinkClick = (link: string) => {
     setActiveLink(link);
