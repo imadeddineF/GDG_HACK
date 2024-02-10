@@ -57,7 +57,7 @@ const Home = () => {
               Add Activity
             </Button>
           </DialogTrigger>
-          <DialogContent className="px-[15px] py-[30px] w-[90%]">
+          <DialogContent className="px-[15px] py-[30px] w-full">
             <DialogHeader>
               <DialogTitle className="text-[#1976D2] mb-[40px] text-center font-bold text-[24px]">
                 Add Activity
@@ -66,18 +66,18 @@ const Home = () => {
                 <input
                   type="text"
                   placeholder="Activity"
-                  className="border borde-[1px] border-[#1976D2] py-[8px] px-[15px] outline-none rounded-md shadow-lg"
+                  className="border-[1px] border-[#1976D2] py-[8px] px-[15px] outline-none rounded-md shadow-lg "
                 />
                 <div className="flex justify-between gap-[15px]">
                   <input
                     type="text"
                     placeholder="Starting Time"
-                    className="border borde-[1px] border-[#1976D2] py-[8px] px-[15px] outline-none rounded-md shadow-lg"
+                    className="border-[1px] border-[#1976D2] py-[8px] px-[15px] outline-none rounded-md shadow-lg"
                   />
                   <input
                     type="text"
                     placeholder="Ending Time"
-                    className="border borde-[1px] border-[#1976D2] py-[8px] px-[15px] outline-none rounded-md shadow-lg"
+                    className="border-[1px] border-[#1976D2] py-[8px] px-[15px] outline-none rounded-md shadow-lg"
                   />
                 </div>
                 <input
@@ -178,7 +178,9 @@ const Home = () => {
                   </AlertDialogHeader>
                   <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction>Delete</AlertDialogAction>
+                    <AlertDialogAction className="bg-[#1976D2] hover:bg-[#1976D2]">
+                      Delete
+                    </AlertDialogAction>
                   </AlertDialogFooter>
                 </AlertDialogContent>
               </AlertDialog>

@@ -190,7 +190,9 @@ const Mentors = () => {
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                       <AlertDialogCancel>Cancel</AlertDialogCancel>
-                      <AlertDialogAction>Delete</AlertDialogAction>
+                      <AlertDialogAction className="bg-[#1976D2] hover:bg-[#1976D2]">
+                        Delete
+                      </AlertDialogAction>
                     </AlertDialogFooter>
                   </AlertDialogContent>
                 </AlertDialog>

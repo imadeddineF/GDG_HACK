@@ -60,7 +60,7 @@ export default function Sidebar() {
           <ul className="mt-[70px] flex flex-1 flex-col ">
             <Link
               href="/"
-              className={`flex items-center gap-[10px] text-white font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+              className={`flex items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
                 activeLink === "/"
                   ? "bg-white text-[#1976D2]"
                   : "bg-[#1976D2] text-white"
@@ -72,7 +72,7 @@ export default function Sidebar() {
             </Link>
             <Link
               href="/participants"
-              className={`flex items-center gap-[10px] text-white font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+              className={`flex items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
                 activeLink === "/participants"
                   ? "bg-white text-[#1976D2]"
                   : "bg-[#1976D2] text-white"
@@ -84,7 +84,7 @@ export default function Sidebar() {
             </Link>
             <Link
               href="/mentors"
-              className={`flex items-center gap-[10px] text-white font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+              className={`flex items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
                 activeLink === "/mentors"
                   ? "bg-white text-[#1976D2]"
                   : "bg-[#1976D2] text-white"
@@ -96,7 +96,7 @@ export default function Sidebar() {
             </Link>
             <Link
               href="/judges"
-              className={`flex items-center gap-[10px] text-white font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+              className={`flex items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
                 activeLink === "/judges"
                   ? "bg-white text-[#1976D2]"
                   : "bg-[#1976D2] text-white"
@@ -108,7 +108,7 @@ export default function Sidebar() {
             </Link>
             <Link
               href="/challenges"
-              className={`flex items-center gap-[10px] text-white font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+              className={`flex items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
                 activeLink === "/challenges"
                   ? "bg-white text-[#1976D2]"
                   : "bg-[#1976D2] text-white"

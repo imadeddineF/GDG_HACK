@@ -13,11 +13,16 @@ type props = {
 const Navbar = ({ title, navbarLogo }: props) => {
   return (
     <nav className="flex dark:bg-black z-50 w-full items-center justify-between shadow-md py-[10px] px-[20px] bg-white">
-      <Image
-        src={navbarLogo}
-        alt="gdg logo"
-        className="cursor-pointer w-[180px]"
-      />
+      {navbarLogo ? (
+        <Image
+          src={navbarLogo}
+          alt="gdg logo"
+          className="cursor-pointer w-[180px]"
+        />
+      ) : (
+        ""
+      )}
+
       <h1 className="text-[#1976D2] font-bold text-[22px]">{title}</h1>
       <div className="flex items-center gap-[10px]">
         <ModeToggle />

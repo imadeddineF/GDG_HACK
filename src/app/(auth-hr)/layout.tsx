@@ -39,7 +39,7 @@ export default function RootLayout({
         >
           <Sidebar />
           <div className="flex flex-col w-full h-screen">
-            <Navbar />
+            <Navbar title="Event page" />
             <div className="flex-1 overflow-y-auto">{children}</div>
           </div>
         </ThemeProvider>
