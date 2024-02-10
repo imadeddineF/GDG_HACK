@@ -47,8 +47,8 @@ const Challenges = () => {
           src={agendaBgImg}
           alt=""
         />
-        <h2 className="absolute text-[32px] left-[180px] bottom-[26px] text-white font-bold">
-          Control your events judges from here
+        <h2 className="absolute text-[30px] left-[110px] bottom-[26px] text-white font-bold">
+          Control your events challenges from here
         </h2>
       </div>
 

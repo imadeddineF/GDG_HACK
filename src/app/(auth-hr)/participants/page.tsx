@@ -32,8 +32,8 @@ const Participants = () => {
           src={agendaBgImg}
           alt=""
         />
-        <h2 className="absolute text-[32px] left-[180px] bottom-[26px] text-white font-bold">
-          Control your events from here
+        <h2 className="absolute text-[32px] left-[130px] bottom-[26px] text-white font-bold">
+          Control your participants from here
         </h2>
       </div>
 

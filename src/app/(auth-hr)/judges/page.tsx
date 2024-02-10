@@ -46,7 +46,7 @@ const Judges = () => {
           src={agendaBgImg}
           alt=""
         />
-        <h2 className="absolute text-[32px] left-[180px] bottom-[26px] text-white font-bold">
+        <h2 className="absolute text-[32px] left-[120px] bottom-[26px] text-white font-bold">
           Control your events judges from here
         </h2>
       </div>

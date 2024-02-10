@@ -6,30 +6,41 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import logoutIcon from "../../../public/svgs/logout.svg";
 import Link from "next/link";
-import whiteAgenda from "../../../public/svgs/whiteAgenda.svg";
-import blueAgenda from "../../../public/svgs/blueAgenda.svg";
-import whiteMentors from "../../../public/svgs/whiteMentors.svg";
-import blueMentors from "../../../public/svgs/blueMentors.svg";
-import whiteJudges from "../../../public/svgs/whiteJudges.svg";
-import blueJudges from "../../../public/svgs/blueJudges.svg";
-import whiteParticipant from "../../../public/svgs/whiteParticipant.svg";
-import blueParticipant from "../../../public/svgs/blueParticipant.svg";
-import whiteChallenges from "../../../public/svgs/whiteChallenges.svg";
-import blueChallenges from "../../../public/svgs/blueChallenges.svg";
+// import whiteAgenda from "../../../public/svgs/whiteAgenda.svg";
+// import blueAgenda from "../../../public/svgs/blueAgenda.svg";
+// import whiteMentors from "../../../public/svgs/whiteMentors.svg";
+// import blueMentors from "../../../public/svgs/blueMentors.svg";
+// import whiteJudges from "../../../public/svgs/whiteJudges.svg";
+// import blueJudges from "../../../public/svgs/blueJudges.svg";
+// import whiteParticipant from "../../../public/svgs/whiteParticipant.svg";
+// import blueParticipant from "../../../public/svgs/blueParticipant.svg";
+// import whiteChallenges from "../../../public/svgs/whiteChallenges.svg";
+// import blueChallenges from "../../../public/svgs/blueChallenges.svg";
+import { VscSettings } from "react-icons/vsc";
+import { IoIosPeople } from "react-icons/io";
+import { LiaChalkboardTeacherSolid } from "react-icons/lia";
+import { FaPuzzlePiece } from "react-icons/fa6";
+import { SlUserFollowing } from "react-icons/sl";
+import whiteLogo from "../../../public/imgs/gdg_logo_3 (1).png";
 
 const SidebarContext = createContext({ expanded: false });
 
 export default function Sidebar() {
   const [expanded, setExpanded] = useState(true);
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleLinkClick = (link: string) => {
+    setActiveLink(link);
+  };
 
   return (
     <aside className="h-screen">
       <nav className="h-full bg-[#1976D2] flex flex-col border-r shadow-sm">
         <div className="p-4 pb-2 flex justify-between items-center">
           <Image
-            src={logo}
+            src={whiteLogo}
             className={`overflow-hidden transition-all ${
-              expanded ? "w-[180px]" : "w-0"
+              expanded ? "w-[180px] mr-[10px]" : "w-0"
             }`}
             alt=""
           />
@@ -37,50 +48,74 @@ export default function Sidebar() {
             onClick={() => setExpanded((curr) => !curr)}
             className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
           >
-            {expanded ? <ChevronFirst /> : <ChevronLast />}
+            {expanded ? (
+              <ChevronFirst className="w-[20px] h-[20px]" />
+            ) : (
+              <ChevronLast className="w-[20px] h-[20px]" />
+            )}
           </button>
         </div>
 
         <SidebarContext.Provider value={{ expanded }}>
           <ul className="mt-[70px] flex flex-1 flex-col ">
             <Link
-              href="/agenda"
-              className="bg-[#1976D2] flex items-center gap-[10px] text-white font-medium hover:text-[#1976D2] cursor-pointer duration-300 transition-all hover:bg-white w-full px-[20px] py-[8px]"
+              href="/"
+              className={`flex items-center gap-[10px] text-white font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+                activeLink === "/"
+                  ? "bg-white text-[#1976D2]"
+                  : "bg-[#1976D2] text-white"
+              }`}
+              onClick={() => handleLinkClick("/")}
             >
-              <Image src={whiteAgenda} alt="" />
-              <Image src={blueAgenda} alt="" />
+              <VscSettings style={{ fontSize: "24px" }} />
               {expanded ? "Agenda" : ""}
             </Link>
             <Link
               href="/participants"
-              className="bg-[#1976D2] flex items-center gap-[10px] text-white font-medium hover:text-[#1976D2] cursor-pointer duration-300 transition-all hover:bg-white w-full px-[20px] py-[8px]"
+              className={`flex items-center gap-[10px] text-white font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+                activeLink === "/participants"
+                  ? "bg-white text-[#1976D2]"
+                  : "bg-[#1976D2] text-white"
+              }`}
+              onClick={() => handleLinkClick("/participants")}
             >
-              <Image src={whiteParticipant} alt="" />
-              <Image src={blueParticipant} alt="" />
+              <IoIosPeople style={{ fontSize: "24px" }} />
               {expanded ? "Participants" : ""}
             </Link>
             <Link
               href="/mentors"
-              className="bg-[#1976D2] flex items-center gap-[10px] text-white font-medium hover:text-[#1976D2] cursor-pointer duration-300 transition-all hover:bg-white w-full px-[20px] py-[8px]"
+              className={`flex items-center gap-[10px] text-white font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+                activeLink === "/mentors"
+                  ? "bg-white text-[#1976D2]"
+                  : "bg-[#1976D2] text-white"
+              }`}
+              onClick={() => handleLinkClick("/mentors")}
             >
-              <Image src={whiteMentors} alt="" />
-              <Image src={blueMentors} alt="" />
+              <LiaChalkboardTeacherSolid style={{ fontSize: "24px" }} />
               {expanded ? "Mentors" : ""}
             </Link>
             <Link
               href="/judges"
-              className="bg-[#1976D2] flex items-center gap-[10px] text-white font-medium hover:text-[#1976D2] cursor-pointer duration-300 transition-all hover:bg-white w-full px-[20px] py-[8px]"
+              className={`flex items-center gap-[10px] text-white font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+                activeLink === "/judges"
+                  ? "bg-white text-[#1976D2]"
+                  : "bg-[#1976D2] text-white"
+              }`}
+              onClick={() => handleLinkClick("/judges")}
             >
-              <Image src={whiteJudges} alt="" />
-              <Image src={blueJudges} alt="" />
+              <SlUserFollowing style={{ fontSize: "24px" }} />
               {expanded ? "Judges" : ""}
             </Link>
             <Link
               href="/challenges"
-              className="bg-[#1976D2] flex items-center gap-[10px] text-white font-medium hover:text-[#1976D2] cursor-pointer duration-300 transition-all hover:bg-white w-full px-[20px] py-[8px]"
+              className={`flex items-center gap-[10px] text-white font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+                activeLink === "/challenges"
+                  ? "bg-white text-[#1976D2]"
+                  : "bg-[#1976D2] text-white"
+              }`}
+              onClick={() => handleLinkClick("/challenges")}
             >
-              <Image src={whiteChallenges} alt="" />
-              <Image src={blueChallenges} alt="" />
+              <FaPuzzlePiece style={{ fontSize: "24px" }} />
               {expanded ? "Challenges" : ""}
             </Link>
           </ul>
