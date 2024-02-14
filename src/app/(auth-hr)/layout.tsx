@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Cairo } from "next/font/google";
 import "../../styles/globals.css";
-import { Inter as FontSans } from "next/font/google";
+import { Cairo as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
-const inter = Inter({ subsets: ["latin"] });
+const cairo = Cairo({ subsets: ["latin"] });
 import { ThemeProvider } from "@/components/theme-provider";
 import Sidebar from "@/components/layouts/sidebar";
 import Navbar from "@/components/layouts/navbar";
