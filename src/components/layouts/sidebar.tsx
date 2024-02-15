@@ -6,22 +6,25 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import logoutIcon from "../../../public/svgs/logout.svg";
 import Link from "next/link";
-// import whiteAgenda from "../../../public/svgs/whiteAgenda.svg";
-// import blueAgenda from "../../../public/svgs/blueAgenda.svg";
-// import whiteMentors from "../../../public/svgs/whiteMentors.svg";
-// import blueMentors from "../../../public/svgs/blueMentors.svg";
-// import whiteJudges from "../../../public/svgs/whiteJudges.svg";
-// import blueJudges from "../../../public/svgs/blueJudges.svg";
-// import whiteParticipant from "../../../public/svgs/whiteParticipant.svg";
-// import blueParticipant from "../../../public/svgs/blueParticipant.svg";
-// import whiteChallenges from "../../../public/svgs/whiteChallenges.svg";
-// import blueChallenges from "../../../public/svgs/blueChallenges.svg";
 import { VscSettings } from "react-icons/vsc";
 import { IoIosPeople } from "react-icons/io";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
 import { FaPuzzlePiece } from "react-icons/fa6";
 import { SlUserFollowing } from "react-icons/sl";
+import { GiTakeMyMoney } from "react-icons/gi";
+import { LuLineChart } from "react-icons/lu";
 import whiteLogo from "../../../public/imgs/gdg_logo_3 (1).png";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 const SidebarContext = createContext({ expanded: false });
 
@@ -60,9 +63,9 @@ export default function Sidebar() {
           <ul className="mt-[70px] flex flex-1 flex-col ">
             <Link
               href="/"
-              className={`flex items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
                 activeLink === "/"
-                  ? "bg-white text-[#1976D2]"
+                  ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
               onClick={() => handleLinkClick("/")}
@@ -72,9 +75,9 @@ export default function Sidebar() {
             </Link>
             <Link
               href="/participants"
-              className={`flex items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
                 activeLink === "/participants"
-                  ? "bg-white text-[#1976D2]"
+                  ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
               onClick={() => handleLinkClick("/participants")}
@@ -84,9 +87,9 @@ export default function Sidebar() {
             </Link>
             <Link
               href="/mentors"
-              className={`flex items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
                 activeLink === "/mentors"
-                  ? "bg-white text-[#1976D2]"
+                  ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
               onClick={() => handleLinkClick("/mentors")}
@@ -96,9 +99,9 @@ export default function Sidebar() {
             </Link>
             <Link
               href="/judges"
-              className={`flex items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
                 activeLink === "/judges"
-                  ? "bg-white text-[#1976D2]"
+                  ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
               onClick={() => handleLinkClick("/judges")}
@@ -108,9 +111,9 @@ export default function Sidebar() {
             </Link>
             <Link
               href="/challenges"
-              className={`flex items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
                 activeLink === "/challenges"
-                  ? "bg-white text-[#1976D2]"
+                  ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
               onClick={() => handleLinkClick("/challenges")}
@@ -118,18 +121,59 @@ export default function Sidebar() {
               <FaPuzzlePiece style={{ fontSize: "24px" }} />
               {expanded ? "Challenges" : ""}
             </Link>
+            <Link
+              href="/statistics"
+              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+                activeLink === "/statistics"
+                  ? "bg-white text-[#1976D2] font-semibold"
+                  : "bg-[#1976D2] text-white"
+              }`}
+              onClick={() => handleLinkClick("/statistics")}
+            >
+              <LuLineChart style={{ fontSize: "24px" }} />
+              {expanded ? "Statistics" : ""}
+            </Link>
+            <Link
+              href="/sponsors"
+              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+                activeLink === "/sponsors"
+                  ? "bg-white text-[#1976D2] font-semibold"
+                  : "bg-[#1976D2] text-white"
+              }`}
+              onClick={() => handleLinkClick("/sponsors")}
+            >
+              <GiTakeMyMoney style={{ fontSize: "24px" }} />
+              {expanded ? "Sponsors" : ""}
+            </Link>
           </ul>
         </SidebarContext.Provider>
 
         <div className="flex pb-[40px] justify-center">
-          <Button
-            className={`${
-              expanded ? "px-[25px]" : "px-[10px]"
-            }  flex items-center gap-[15px] hover:bg-white/80 duration-300 transition-all py-0 bg-white text-[#EA4334] rounded-[15px]`}
-          >
-            <Image src={logoutIcon} alt="" />
-            {expanded ? "Logout" : ""}
-          </Button>
+          <AlertDialog>
+            <AlertDialogTrigger>
+              <Button
+                className={`${
+                  expanded ? "px-[25px]" : "px-[10px]"
+                }  flex items-center gap-[15px] hover:bg-white/80 duration-300 transition-all py-0 bg-white text-[#EA4334] rounded-[15px]`}
+              >
+                <Image src={logoutIcon} alt="" />
+                {expanded ? "Logout" : ""}
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>
+                  Are you absolutely sure to logout ?
+                </AlertDialogTitle>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction className="bg-[#d23219] hover:bg-[#a6200b]">
+                  Logout
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       </nav>
     </aside>
