@@ -13,6 +13,8 @@ import { FaPuzzlePiece } from "react-icons/fa6";
 import { SlUserFollowing } from "react-icons/sl";
 import { GiTakeMyMoney } from "react-icons/gi";
 import { LuLineChart } from "react-icons/lu";
+import { CgProfile } from "react-icons/cg";
+import { VscFeedback } from "react-icons/vsc";
 import whiteLogo from "../../../public/imgs/gdg_logo_3 (1).png";
 import {
   AlertDialog,
@@ -61,6 +63,7 @@ export default function Sidebar() {
 
         <SidebarContext.Provider value={{ expanded }}>
           <ul className="mt-[70px] flex flex-1 flex-col ">
+            {/* Agenda */}
             <Link
               href="/"
               className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
@@ -73,6 +76,7 @@ export default function Sidebar() {
               <VscSettings style={{ fontSize: "24px" }} />
               {expanded ? "Agenda" : ""}
             </Link>
+            {/* Participants */}
             <Link
               href="/participants"
               className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
@@ -85,6 +89,7 @@ export default function Sidebar() {
               <IoIosPeople style={{ fontSize: "24px" }} />
               {expanded ? "Participants" : ""}
             </Link>
+            {/* Mentors */}
             <Link
               href="/mentors"
               className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
@@ -97,6 +102,7 @@ export default function Sidebar() {
               <LiaChalkboardTeacherSolid style={{ fontSize: "24px" }} />
               {expanded ? "Mentors" : ""}
             </Link>
+            {/* Judges */}
             <Link
               href="/judges"
               className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
@@ -109,6 +115,7 @@ export default function Sidebar() {
               <SlUserFollowing style={{ fontSize: "24px" }} />
               {expanded ? "Judges" : ""}
             </Link>
+            {/* Challenges */}
             <Link
               href="/challenges"
               className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
@@ -121,6 +128,20 @@ export default function Sidebar() {
               <FaPuzzlePiece style={{ fontSize: "24px" }} />
               {expanded ? "Challenges" : ""}
             </Link>
+            {/* Feedbacks */}
+            <Link
+              href="/feedbacks"
+              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
+                activeLink === "/feedbacks"
+                  ? "bg-white text-[#1976D2] font-semibold"
+                  : "bg-[#1976D2] text-white"
+              }`}
+              onClick={() => handleLinkClick("/feedbacks")}
+            >
+              <VscFeedback style={{ fontSize: "24px" }} />
+              {expanded ? "Feedbacks" : ""}
+            </Link>
+            {/* Statistics */}
             <Link
               href="/statistics"
               className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
@@ -133,6 +154,7 @@ export default function Sidebar() {
               <LuLineChart style={{ fontSize: "24px" }} />
               {expanded ? "Statistics" : ""}
             </Link>
+            {/* Sponsors */}
             <Link
               href="/sponsors"
               className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
@@ -148,7 +170,16 @@ export default function Sidebar() {
           </ul>
         </SidebarContext.Provider>
 
-        <div className="flex pb-[40px] justify-center">
+        <div className="flex flex-col items-center gap-[20px] pb-[40px] justify-center">
+          <Link
+            href={`/${1}`}
+            className={`${
+              expanded ? "px-[25px]" : "px-[10px]"
+            }  flex items-center gap-[15px] hover:bg-white/80 duration-300 transition-all py-[8px] bg-white rounded-[15px]`}
+          >
+            <CgProfile style={{ fontSize: "24px" }} />
+            {expanded ? "Profile" : ""}
+          </Link>
           <AlertDialog>
             <AlertDialogTrigger>
               <Button

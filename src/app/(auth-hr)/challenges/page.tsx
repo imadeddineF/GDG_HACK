@@ -1,19 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import agendaBgImg from "../../../../public/imgs/agendaBgImg.png";
-import qrCode from "../../../../public/svgs/qrCode.svg";
-import close from "../../../../public/svgs/close.svg";
-import edit from "../../../../public/svgs/edit.svg";
-
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 
 import {
   Dialog,
@@ -24,17 +11,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import ChallengeCard from "@/components/challengeCard";
 
