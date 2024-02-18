@@ -41,6 +41,11 @@ export default function Sidebar() {
     setTitle(title);
   };
 
+  const handleProfileClick = () => {
+    setTitle("Profile");
+    setActiveLink("");
+  };
+
   return (
     <aside className="h-screen">
       <nav className="h-full bg-[#1976D2] flex flex-col border-r shadow-sm">
@@ -173,14 +178,14 @@ export default function Sidebar() {
           </ul>
         </SidebarContext.Provider>
 
-        <div className="flex flex-col items-center gap-[20px] pb-[40px] justify-center">
+        <div className="flex flex-col items-center pb-[40px] justify-center">
           {/* Profile */}
           <Link
             href={`/${1}`}
-            onClick={() => setTitle("Profile")}
+            onClick={handleProfileClick}
             className={`${
               expanded ? "px-[25px]" : "px-[10px]"
-            }  flex items-center gap-[15px] text-[#1976D2] hover:bg-white/80 duration-300 transition-all py-[8px] bg-white rounded-[15px]`}
+            } flex items-center mb-[15px] gap-[15px] text-[#1976D2] hover:bg-white/80 duration-300 transition-all py-[6px] bg-white rounded-[15px]`}
           >
             <CgProfile style={{ fontSize: "24px" }} />
             {expanded ? "Profile" : ""}
@@ -188,14 +193,14 @@ export default function Sidebar() {
           {/* Logout */}
           <AlertDialog>
             <AlertDialogTrigger>
-              <Button
+              <button
                 className={`${
                   expanded ? "px-[25px]" : "px-[10px]"
-                }  flex items-center gap-[15px] hover:bg-white/80 duration-300 transition-all py-0 bg-white text-[#EA4334] rounded-[15px]`}
+                }  flex items-center py-[6px] gap-[15px] hover:bg-white/80 duration-300 transition-all bg-white text-[#EA4334] rounded-[15px]`}
               >
                 <Image src={logoutIcon} alt="" />
                 {expanded ? "Logout" : ""}
-              </Button>
+              </button>
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>

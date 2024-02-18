@@ -7,6 +7,7 @@ const cairo = Cairo({ subsets: ["latin"] });
 import { ThemeProvider } from "@/components/theme-provider";
 import Sidebar from "@/components/layouts/sidebar";
 import DashboardNavbar from "@/components/layouts/dashboardNavbar";
+import BlueCardHeader from "@/components/blueCardHeader";
 
 export const metadata: Metadata = {
   title: "GDG Hack",
@@ -40,7 +41,10 @@ export default function RootLayout({
           <Sidebar />
           <div className="flex flex-col w-full h-screen">
             <DashboardNavbar />
-            <div className="flex-1 overflow-y-auto">{children}</div>
+            <div className="flex-1 overflow-y-auto bg-black/5 p-[20px] h-screen">
+              <BlueCardHeader />
+              {children}
+            </div>
           </div>
         </ThemeProvider>
       </body>

@@ -16,18 +16,7 @@ import ChallengeCard from "@/components/challengeCard";
 
 const Challenges = () => {
   return (
-    <div className=" bg-black/5 p-[20px] pb-[50px]">
-      <div className="rounded-2xl overflow-hidden w-full h-[150px] relative">
-        <Image
-          className="w-full h-full absolute top-0 left-0"
-          src={agendaBgImg}
-          alt=""
-        />
-        <h2 className="absolute text-[30px] left-[110px] bottom-[26px] text-white font-bold">
-          Control your events challenges from here
-        </h2>
-      </div>
-
+    <div>
       <div className="flex mt-[40px] items-start px-[50px] justify-between flex-wrap gap-[25px]">
         <Dialog>
           <DialogTrigger className="w-[48%]">

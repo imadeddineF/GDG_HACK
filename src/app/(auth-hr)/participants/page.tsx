@@ -25,18 +25,7 @@ import { Button } from "@/components/ui/button";
 
 const Participants = () => {
   return (
-    <div className=" bg-black/5 p-[20px] h-screen">
-      <div className="rounded-2xl overflow-hidden w-full h-[150px] relative">
-        <Image
-          className="w-full h-full absolute top-0 left-0"
-          src={agendaBgImg}
-          alt=""
-        />
-        <h2 className="absolute text-[32px] left-[130px] bottom-[26px] text-white font-bold">
-          Control your participants from here
-        </h2>
-      </div>
-
+    <div>
       <div className="mt-[40px]">
         <Table className="bg-white shadow-md rounded-lg">
           <TableCaption>A list of your recent invoices.</TableCaption>

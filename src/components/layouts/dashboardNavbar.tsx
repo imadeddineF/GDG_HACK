@@ -20,6 +20,7 @@ const DashboardNavbar = () => {
           src={notifications}
           alt="notifications"
         />
+
         <Avatar className="cursor-pointer">
           <AvatarImage src="https://github.com/shadcn.png" />
           <AvatarFallback>CN</AvatarFallback>

@@ -5,7 +5,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import notifications from "../../../public/svgs/notifications.svg";
 import whiteGdgLogo from "../../../public/imgs/gdg_logo_3 (1).png";
 import Image from "next/image";
-import { useHeaderTitle } from "@/store/headerTitle";
 import GDG from "../../../public/imgs/gdgMainLogo.png";
 
 const Navbar = () => {
@@ -15,11 +14,13 @@ const Navbar = () => {
 
       <div className="flex items-center gap-[10px]">
         <ModeToggle />
+
         <Image
           className="cursor-pointer"
           src={notifications}
           alt="notifications"
         />
+
         <Avatar className="cursor-pointer">
           <AvatarImage src="https://github.com/shadcn.png" />
           <AvatarFallback>CN</AvatarFallback>
