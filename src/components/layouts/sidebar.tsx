@@ -27,15 +27,18 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { useHeaderTitle } from "@/store/headerTitle";
 
 const SidebarContext = createContext({ expanded: false });
 
 export default function Sidebar() {
   const [expanded, setExpanded] = useState(true);
   const [activeLink, setActiveLink] = useState("/");
+  const { setTitle } = useHeaderTitle((state) => state);
 
-  const handleLinkClick = (link: string) => {
+  const handleLinkClick = (link: string, title: string) => {
     setActiveLink(link);
+    setTitle(title);
   };
 
   return (
@@ -71,7 +74,7 @@ export default function Sidebar() {
                   ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
-              onClick={() => handleLinkClick("/")}
+              onClick={() => handleLinkClick("/", "Agenda")}
             >
               <VscSettings style={{ fontSize: "24px" }} />
               {expanded ? "Agenda" : ""}
@@ -84,7 +87,7 @@ export default function Sidebar() {
                   ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
-              onClick={() => handleLinkClick("/participants")}
+              onClick={() => handleLinkClick("/participants", "Participants")}
             >
               <IoIosPeople style={{ fontSize: "24px" }} />
               {expanded ? "Participants" : ""}
@@ -97,7 +100,7 @@ export default function Sidebar() {
                   ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
-              onClick={() => handleLinkClick("/mentors")}
+              onClick={() => handleLinkClick("/mentors", "Mentors")}
             >
               <LiaChalkboardTeacherSolid style={{ fontSize: "24px" }} />
               {expanded ? "Mentors" : ""}
@@ -110,7 +113,7 @@ export default function Sidebar() {
                   ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
-              onClick={() => handleLinkClick("/judges")}
+              onClick={() => handleLinkClick("/judges", "Judges")}
             >
               <SlUserFollowing style={{ fontSize: "24px" }} />
               {expanded ? "Judges" : ""}
@@ -123,7 +126,7 @@ export default function Sidebar() {
                   ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
-              onClick={() => handleLinkClick("/challenges")}
+              onClick={() => handleLinkClick("/challenges", "Challenges")}
             >
               <FaPuzzlePiece style={{ fontSize: "24px" }} />
               {expanded ? "Challenges" : ""}
@@ -136,7 +139,7 @@ export default function Sidebar() {
                   ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
-              onClick={() => handleLinkClick("/feedbacks")}
+              onClick={() => handleLinkClick("/feedbacks", "Feedbacks")}
             >
               <VscFeedback style={{ fontSize: "24px" }} />
               {expanded ? "Feedbacks" : ""}
@@ -149,7 +152,7 @@ export default function Sidebar() {
                   ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
-              onClick={() => handleLinkClick("/statistics")}
+              onClick={() => handleLinkClick("/statistics", "Statistics")}
             >
               <LuLineChart style={{ fontSize: "24px" }} />
               {expanded ? "Statistics" : ""}
@@ -162,7 +165,7 @@ export default function Sidebar() {
                   ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
-              onClick={() => handleLinkClick("/sponsors")}
+              onClick={() => handleLinkClick("/sponsors", "Sponsors")}
             >
               <GiTakeMyMoney style={{ fontSize: "24px" }} />
               {expanded ? "Sponsors" : ""}
@@ -173,6 +176,7 @@ export default function Sidebar() {
         <div className="flex flex-col items-center gap-[20px] pb-[40px] justify-center">
           <Link
             href={`/${1}`}
+            onClick={() => setTitle("Profile")}
             className={`${
               expanded ? "px-[25px]" : "px-[10px]"
             }  flex items-center gap-[15px] hover:bg-white/80 duration-300 transition-all py-[8px] bg-white rounded-[15px]`}

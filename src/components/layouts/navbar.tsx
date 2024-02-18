@@ -1,16 +1,19 @@
+"use client";
 import React from "react";
 import { ModeToggle } from "../ui/mode-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import notifications from "../../../public/svgs/notifications.svg";
 import whiteGdgLogo from "../../../public/imgs/gdg_logo_3 (1).png";
-
 import Image from "next/image";
+import { useHeaderTitle } from "@/store/headerTitle";
+
 type props = {
-  title?: string;
   navbarLogo?: any;
 };
 
-const Navbar = ({ title, navbarLogo }: props) => {
+const Navbar = ({ navbarLogo }: props) => {
+  const setTitle = useHeaderTitle((state) => state.title);
+
   return (
     <nav className="flex dark:bg-black z-50 w-full items-center justify-between shadow-md py-[10px] px-[20px] bg-white">
       {navbarLogo ? (
@@ -23,7 +26,7 @@ const Navbar = ({ title, navbarLogo }: props) => {
         ""
       )}
 
-      <h1 className="text-[#1976D2] font-bold text-[22px]">{title}</h1>
+      <h1 className="text-[#1976D2] font-bold text-[22px]">{setTitle}</h1>
       <div className="flex items-center gap-[10px]">
         <ModeToggle />
         <Image
