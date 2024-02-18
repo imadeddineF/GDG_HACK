@@ -31,7 +31,7 @@ export default function EventsLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar navbarLogo={GDG} />
+          <Navbar />
           <div>{children}</div>
         </ThemeProvider>
       </body>

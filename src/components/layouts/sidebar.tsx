@@ -33,7 +33,7 @@ const SidebarContext = createContext({ expanded: false });
 
 export default function Sidebar() {
   const [expanded, setExpanded] = useState(true);
-  const [activeLink, setActiveLink] = useState("/");
+  const [activeLink, setActiveLink] = useState("/agenda");
   const { setTitle } = useHeaderTitle((state) => state);
 
   const handleLinkClick = (link: string, title: string) => {
@@ -174,16 +174,18 @@ export default function Sidebar() {
         </SidebarContext.Provider>
 
         <div className="flex flex-col items-center gap-[20px] pb-[40px] justify-center">
+          {/* Profile */}
           <Link
             href={`/${1}`}
             onClick={() => setTitle("Profile")}
             className={`${
               expanded ? "px-[25px]" : "px-[10px]"
-            }  flex items-center gap-[15px] hover:bg-white/80 duration-300 transition-all py-[8px] bg-white rounded-[15px]`}
+            }  flex items-center gap-[15px] text-[#1976D2] hover:bg-white/80 duration-300 transition-all py-[8px] bg-white rounded-[15px]`}
           >
             <CgProfile style={{ fontSize: "24px" }} />
             {expanded ? "Profile" : ""}
           </Link>
+          {/* Logout */}
           <AlertDialog>
             <AlertDialogTrigger>
               <Button

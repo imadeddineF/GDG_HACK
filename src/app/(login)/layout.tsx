@@ -1,4 +1,4 @@
-import Navbar from "@/components/layouts/navbar";
+import Navbar from "@/components/layouts/dashboardNavbar";
 import "../../styles/globals.css";
 import { Cairo } from "next/font/google";
 import { Cairo as FontSans } from "next/font/google";
