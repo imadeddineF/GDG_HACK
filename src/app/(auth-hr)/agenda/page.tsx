@@ -1,10 +1,10 @@
 import React from "react";
-import agendaBgImg from "../../../public/imgs/agendaBgImg.png";
+import agendaBgImg from "../../../../public/imgs/agendaBgImg.png";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import close from "../../../public/svgs/close.svg";
-import edit from "../../../public/svgs/edit.svg";
+import close from "../../../../public/svgs/close.svg";
+import edit from "../../../../public/svgs/edit.svg";
 
 import {
   Table,

@@ -68,13 +68,13 @@ export default function Sidebar() {
           <ul className="mt-[70px] flex flex-1 flex-col ">
             {/* Agenda */}
             <Link
-              href="/"
+              href="/agenda"
               className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
-                activeLink === "/"
+                activeLink === "/agenda"
                   ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
-              onClick={() => handleLinkClick("/", "Agenda")}
+              onClick={() => handleLinkClick("/agenda", "Agenda")}
             >
               <VscSettings style={{ fontSize: "24px" }} />
               {expanded ? "Agenda" : ""}
