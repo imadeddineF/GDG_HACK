@@ -31,7 +31,7 @@ import { useHeaderTitle } from "@/store/headerTitle";
 
 const SidebarContext = createContext({ expanded: false });
 
-export default function Sidebar() {
+export default function JudgesSidebar() {
   const [expanded, setExpanded] = useState(true);
   const [activeLink, setActiveLink] = useState("/agenda");
   const { setTitle } = useHeaderTitle((state) => state);
@@ -71,110 +71,20 @@ export default function Sidebar() {
 
         <SidebarContext.Provider value={{ expanded }}>
           <ul className="mt-[70px] flex flex-1 flex-col ">
-            {/* Agenda */}
+            {/* Submitions */}
             <Link
-              href="/agenda"
+              href="/submitions"
               className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
-                activeLink === "/agenda"
+                activeLink === "/submitions"
                   ? "bg-white text-[#1976D2] font-semibold"
                   : "bg-[#1976D2] text-white"
               }`}
-              onClick={() => handleLinkClick("/agenda", "Agenda")}
+              onClick={() => handleLinkClick("/submitions", "Submitions")}
             >
               <VscSettings style={{ fontSize: "24px" }} />
-              {expanded ? "Agenda" : ""}
+              {expanded ? "Submitions" : ""}
             </Link>
             {/* Participants */}
-            <Link
-              href="/participants"
-              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
-                activeLink === "/participants"
-                  ? "bg-white text-[#1976D2] font-semibold"
-                  : "bg-[#1976D2] text-white"
-              }`}
-              onClick={() => handleLinkClick("/participants", "Participants")}
-            >
-              <IoIosPeople style={{ fontSize: "24px" }} />
-              {expanded ? "Participants" : ""}
-            </Link>
-            {/* Mentors */}
-            <Link
-              href="/mentors"
-              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
-                activeLink === "/mentors"
-                  ? "bg-white text-[#1976D2] font-semibold"
-                  : "bg-[#1976D2] text-white"
-              }`}
-              onClick={() => handleLinkClick("/mentors", "Mentors")}
-            >
-              <LiaChalkboardTeacherSolid style={{ fontSize: "24px" }} />
-              {expanded ? "Mentors" : ""}
-            </Link>
-            {/* Judges */}
-            <Link
-              href="/judges"
-              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
-                activeLink === "/judges"
-                  ? "bg-white text-[#1976D2] font-semibold"
-                  : "bg-[#1976D2] text-white"
-              }`}
-              onClick={() => handleLinkClick("/judges", "Judges")}
-            >
-              <SlUserFollowing style={{ fontSize: "24px" }} />
-              {expanded ? "Judges" : ""}
-            </Link>
-            {/* Challenges */}
-            <Link
-              href="/challenges"
-              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
-                activeLink === "/challenges"
-                  ? "bg-white text-[#1976D2] font-semibold"
-                  : "bg-[#1976D2] text-white"
-              }`}
-              onClick={() => handleLinkClick("/challenges", "Challenges")}
-            >
-              <FaPuzzlePiece style={{ fontSize: "24px" }} />
-              {expanded ? "Challenges" : ""}
-            </Link>
-            {/* Feedbacks */}
-            <Link
-              href="/feedbacks"
-              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
-                activeLink === "/feedbacks"
-                  ? "bg-white text-[#1976D2] font-semibold"
-                  : "bg-[#1976D2] text-white"
-              }`}
-              onClick={() => handleLinkClick("/feedbacks", "Feedbacks")}
-            >
-              <VscFeedback style={{ fontSize: "24px" }} />
-              {expanded ? "Feedbacks" : ""}
-            </Link>
-            {/* Statistics */}
-            <Link
-              href="/statistics"
-              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
-                activeLink === "/statistics"
-                  ? "bg-white text-[#1976D2] font-semibold"
-                  : "bg-[#1976D2] text-white"
-              }`}
-              onClick={() => handleLinkClick("/statistics", "Statistics")}
-            >
-              <LuLineChart style={{ fontSize: "24px" }} />
-              {expanded ? "Statistics" : ""}
-            </Link>
-            {/* Sponsors */}
-            <Link
-              href="/sponsors"
-              className={`flex hover:bg-white/80 hover:text-[#1976D2] items-center gap-[10px] font-medium  cursor-pointer duration-300 transition-all w-full px-[20px] py-[8px] ${
-                activeLink === "/sponsors"
-                  ? "bg-white text-[#1976D2] font-semibold"
-                  : "bg-[#1976D2] text-white"
-              }`}
-              onClick={() => handleLinkClick("/sponsors", "Sponsors")}
-            >
-              <GiTakeMyMoney style={{ fontSize: "24px" }} />
-              {expanded ? "Sponsors" : ""}
-            </Link>
           </ul>
         </SidebarContext.Provider>
 

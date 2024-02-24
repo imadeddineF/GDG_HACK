@@ -18,7 +18,7 @@ import TransitionPageEffect from "@/components/transitionPageEffect";
 
 const BASE_URL = "http://192.168.8.100:8000/";
 
-const Login = () => {
+const HrSignIn = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
@@ -121,4 +121,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default HrSignIn;

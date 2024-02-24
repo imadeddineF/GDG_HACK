@@ -9,7 +9,7 @@ interface ICurrentEventProps {
   YONKOS: string;
 }
 
-const CurrentEvent = ({ YONKOS }: ICurrentEventProps) => {
+const Teams = ({ YONKOS }: ICurrentEventProps) => {
   return (
     <div className="flex justify-center mb-[80px] mt-[60px] items-center flex-col">
       <Image className="fixed -z-20 top-0 left-0" src={bg} alt="" />
@@ -35,4 +35,4 @@ const CurrentEvent = ({ YONKOS }: ICurrentEventProps) => {
   );
 };
 
-export default CurrentEvent;
+export default Teams;

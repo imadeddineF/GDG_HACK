@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/dialog";
 import EventCard from "@/components/eventCard";
 
-const Events = () => {
+const Hr = () => {
   return (
     <div className="flex justify-center mb-[80px] mt-[60px] items-center flex-col">
       <div className="w-[80%]">
@@ -134,4 +134,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default Hr;

@@ -3,7 +3,7 @@ import "../../styles/globals.css";
 import { Cairo } from "next/font/google";
 import { Cairo as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
-import Sidebar from "@/components/layouts/sidebar";
+import HRSidebar from "@/components/layouts/hr-sidebar";
 import DashboardNavbar from "@/components/layouts/dashboardNavbar";
 import BlueCardHeader from "@/components/blueCardHeader";
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("flex bg-background font-sans", fontSans.variable)}>
-        <Sidebar />
+        <HRSidebar />
         <div className="flex flex-col w-full min-h-screen">
           <DashboardNavbar />
           <div className="flex-1 overflow-y-auto bg-black/5 p-[20px] h-screen">
