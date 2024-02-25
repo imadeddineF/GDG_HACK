@@ -19,8 +19,10 @@ export const fontSans = FontSans({
 
 export default function LoginLayout({
   children,
+  loginSwitching,
 }: {
   children: React.ReactNode;
+  loginSwitching: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -32,6 +34,7 @@ export default function LoginLayout({
           disableTransitionOnChange
         >
           {children}
+          {loginSwitching}
         </ThemeProvider>
       </body>
     </html>
