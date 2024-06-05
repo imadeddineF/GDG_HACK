@@ -5,11 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import redCodeverify from '../../../../../public/svgs/anythingRedTimer.svg';
 
-interface ICurrentEventProps {
-  YONKOS: string;
-}
-
-const SubmittedForm = ({ YONKOS }: ICurrentEventProps) => {
+const SubmittedForm = () => {
   return (
     <div className="flex justify-center mb-[80px] mt-[60px] items-center flex-col">
       <Image className="fixed -z-20 top-0 left-0" src={bg} alt="" />

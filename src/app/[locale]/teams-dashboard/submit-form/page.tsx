@@ -6,11 +6,7 @@ import redCodeverify from '../../../../../public/svgs/redVerification.svg';
 import plus from '../../../../../public/svgs/plus.svg';
 import Link from 'next/link';
 
-interface ICurrentEventProps {
-  YONKOS: string;
-}
-
-const SubmitForm = ({ YONKOS }: ICurrentEventProps) => {
+export default function SubmitForm() {
   return (
     <div className="flex justify-center mb-[80px] mt-[60px] items-center flex-col">
       <Image className="fixed -z-20 top-0 left-0" src={bg} alt="" />
@@ -88,6 +84,4 @@ const SubmitForm = ({ YONKOS }: ICurrentEventProps) => {
       </form>
     </div>
   );
-};
-
-export default SubmitForm;
+}
