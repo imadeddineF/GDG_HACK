@@ -47,8 +47,8 @@ export default function HRSidebar() {
   };
 
   return (
-    <aside className="h-screen">
-      <nav className="h-full bg-[#1976D2] flex flex-col border-r shadow-sm">
+    <aside className="min-h-screen">
+      <nav className="flex h-full flex-col gap-2 bg-[#1976D2] border-r shadow-sm">
         <div className="p-4 pb-2 flex justify-between items-center">
           <Image
             src={whiteLogo}
@@ -180,7 +180,7 @@ export default function HRSidebar() {
               }
             >
               <LuLineChart style={{ fontSize: '24px' }} />
-              {expanded ? 'analytics' : ''}
+              {expanded ? 'Analytics' : ''}
             </Link>
 
             {/* Sponsors */}

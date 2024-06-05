@@ -15,7 +15,7 @@ export default function HrDashboardLayout({
         <HRSidebar />
         <div className="flex flex-col w-full min-h-screen">
           <HRNavbar />
-          {children}
+          <div className="p-20">{children}</div>
         </div>
       </body>
     </html>

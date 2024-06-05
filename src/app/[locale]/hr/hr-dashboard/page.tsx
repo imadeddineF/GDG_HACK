@@ -6,7 +6,7 @@ export default function Home() {
   const direction = useTextDirection();
 
   return (
-    <main className="flex justify-between min-h-screen p-24">
+    <main className="flex justify-between">
       <h1>Welcome to GDG Algiers -Hr- </h1>
     </main>
   );

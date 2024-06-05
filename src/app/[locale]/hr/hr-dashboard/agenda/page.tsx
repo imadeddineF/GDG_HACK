@@ -40,10 +40,6 @@ import {
 const Agenda = () => {
   return (
     <>
-      {/* Header */}
-      <Head>
-        <title>Agenda</title>
-      </Head>
       {/* Main */}
       <main>
         <div className="flex justify-end my-[30px]">

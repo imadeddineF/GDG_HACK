@@ -38,7 +38,7 @@ const Hr = () => {
               <DialogTrigger className="w-full">
                 <div className="text-[#1976D2] shadow-md duration-300 transition-all text-[20px] font-bold rounded-lg cursor-pointer  h-[180px] bg-white hover:bg-gray-300 flex flex-col justify-center items-center">
                   <h1>Add New Event</h1>
-                  <button>+</button>
+                  <span>+</span>
                 </div>
               </DialogTrigger>
 
