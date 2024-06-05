@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "title": "Imad",
+    "description": "Réalisé avec Next.js 14",
+    "dashboard": {
+      "title": "Tableau de bord",
+      "description": "Description du tableau de bord"
+    },
+    "auth": {
+      "signin": {
+        "title": "Connexion",
+        "description": "Description de la connexion"
+      },
+      "signup": {
+        "title": "Inscription",
+        "description": "Description de l'inscription"
+      }
+    }
+  },
+  "test": "Francais"
+}

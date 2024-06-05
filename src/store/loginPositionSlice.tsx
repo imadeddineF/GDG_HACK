@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 type LoginPosition = {
   position: string;
@@ -6,6 +6,6 @@ type LoginPosition = {
 };
 
 export const useLoginPosition = create<LoginPosition>((set) => ({
-  position: "left-0",
+  position: 'left-0',
   setPosition: (position) => set({ position }),
 }));

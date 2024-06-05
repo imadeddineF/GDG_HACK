@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "title": "عماد",
+    "description": "مصنوع بواسطة نيكست جاي إس 14",
+    "dashboard": {
+      "title": "لوحة القيادة",
+      "description": "وصف لوحة القيادة"
+    },
+    "auth": {
+      "signin": {
+        "title": "تسجيل الدخول",
+        "description": "وصف تسجيل الدخول"
+      },
+      "signup": {
+        "title": "التسجيل",
+        "description": "وصف التسجيل"
+      }
+    }
+  },
+  "test": "Arabic"
+}

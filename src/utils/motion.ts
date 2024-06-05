@@ -8,24 +8,22 @@ interface Transition {
 }
 
 interface Variant {
-  hidden: {
-    opacity: number;
-    y: number;
-    transition?: Transition;
-  };
-  show: {
-    opacity: number;
-    y: number;
-    transition?: Transition;
-  };
+  opacity: number;
+  y: number;
+  transition?: Transition;
 }
 
-export const navVariants: Variant = {
+interface Variants {
+  hidden: Variant;
+  show: Variant;
+}
+
+export const navVariants: Variants = {
   hidden: {
     opacity: 0,
     y: -50,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 200,
       damping: 140,
     },
@@ -34,14 +32,14 @@ export const navVariants: Variant = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 80,
       delay: 0.02,
     },
   },
-};
+} as const;
 
-export const textVariant2: Variant = {
+export const textVariant2: Variants = {
   hidden: {
     opacity: 0,
     y: 20,
@@ -50,19 +48,19 @@ export const textVariant2: Variant = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "tween",
+      type: 'tween',
       duration: 0.3,
-      ease: "easeIn",
+      ease: 'easeIn',
     },
   },
-};
+} as const;
 
-export const footerVariants: Variant = {
+export const footerVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 50,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 200,
       damping: 140,
     },
@@ -71,9 +69,9 @@ export const footerVariants: Variant = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 80,
       delay: 0.02,
     },
   },
-};
+} as const;

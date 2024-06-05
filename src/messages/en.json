@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "title": "3imad",
+    "description": "Made with next js 14",
+    "dashboard": {
+      "title": "Dashboard",
+      "description": "Dashboard description"
+    },
+    "auth": {
+      "signin": {
+        "title": "Signin",
+        "description": "Signin description"
+      },
+      "signup": {
+        "title": "Signup",
+        "description": "Signup description"
+      }
+    }
+  },
+  "test": "English"
+}

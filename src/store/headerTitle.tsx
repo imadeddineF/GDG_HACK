@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 type HeaderTitleState = {
   title: string;
@@ -6,6 +6,6 @@ type HeaderTitleState = {
 };
 
 export const useHeaderTitle = create<HeaderTitleState>((set) => ({
-  title: "Agenda",
+  title: 'Agenda',
   setTitle: (title) => set({ title }),
 }));
